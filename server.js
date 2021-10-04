@@ -119,8 +119,6 @@ router.post("/create-many-people", function (req, res, next) {
     createPeople(req.body, function (err, data) {
       clearTimeout(t);
       if (err) {
-        console.log('1')
-        console.log(err)
         return next(err);
       }
       if (!data) {
@@ -129,8 +127,6 @@ router.post("/create-many-people", function (req, res, next) {
       }
       Person.find({}, function (err, pers) {
         if (err) {
-          console.log('2')
-          console.log(err)
           return next(err);
         }
         res.json(pers);

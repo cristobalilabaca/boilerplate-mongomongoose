@@ -379,6 +379,7 @@ router.post("/query-tools", function (req, res, next) {
       }
       try {
         chain(function (err, data) {
+          console.log(data)
           clearTimeout(t);
           if (err) {
             return next(err);
